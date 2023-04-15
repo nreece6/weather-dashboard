@@ -6,21 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link type="stylesheet" href="assets/style.css"/>
+    <link rel="stylesheet" href="assets/style.css"/>
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>Weather Dashboard</header>
+    <header class="h-48 flex justify-center items-center bg-sky-200">
+        <img src="images/Weather-clip-art.jpg" alt="Weather-Image" class="h-32">
+        <h1 class="text-8xl px-4">Weather Dashboard</h1>
+        <img src="images/Weather-clip-art.jpg" alt="Weather-Image" class="h-32">
+    </header>
 <main>
-    <div class="row">
-    <div class="">
-        <h2>Check out the weather!</h2>
-        <form>
-            <input type="search" placeholder="Enter the city you would like to search">
+    <div class="row flex justify-center space-x-10 my-4">
+    <div class="left-card bg-gray-200 w-1/4 shadow-md">
+        <h2 class="font-bold text-3xl text-center">Check out the weather!</h2>
+        <form class="flex-col justify-center">
+            <input type="search" placeholder="Enter the city you would like to search" class="w-11/12 m-3 py-1">
+            <button id="search-button" class="w-11/12 bg-sky-400 m-3 py-1">Search</button>
         </form>
+        <button id="clear-history" class="bg-sky-400 m-3 px-3 py-1">Clear History</button>
+        <ul id="append-list">
 
+        </ul>
+    
     </div>
-
+    <div class="right-card w-3/5">
+        <div class="border border-solid rounded-md shadow-md p-2">
+            <h2 id="city" class="font-bold text-3xl"></h2>
+            <p>Temperature:</p>
+            <p>Humidity:</p>
+            <p>Wind Speed:</p>
+            </div>
+        <div id="5-day-forecast">
+            <h2 class="font-bold text-3xl m-4">5-Day-Forecast</h2>
+            <div class="flex row space-x-4">
+                <div class="bg-sky-200 rounded-md shadow-md p-2">
+                    <p id="fDate0"></p>
+                    <p id="fImg0"></p>
+                    <p>Temp:<span id="fTemp0"></span></p>
+                    <p>Wind:<span id="fWind0"></span></p>
+                    <p>Humidity:<span id="fHumidity0"></span></p>
+                </div>
+                <div class="bg-sky-200 rounded-md shadow-md p-2">
+                    <p id="fDate1"></p>
+                    <p id="fImg1"></p>
+                    <p>Temp:<span id="fTemp1"></span></p>
+                    <p>Wind:<span id="fWind1"></span></p>
+                    <p>Humidity:<span id="fHumidity1"></span></p>
+                </div>
+                <div class="bg-sky-200 rounded-md shadow-md p-2">
+                    <p id="fDate2"></p>
+                    <p id="fImg2"></p>
+                    <p>Temp:<span id="fTemp2"></span></p>
+                    <p>Wind:<span id="fWind2"></span></p>
+                    <p>Humidity:<span id="fHumidity2"></span></p>
+                </div>
+                <div class="bg-sky-200 rounded-md shadow-md p-2">
+                    <p id="fDate3"></p>
+                    <p id="fImg3"></p>
+                    <p>Temp:<span id="fTemp3"></span></p>
+                    <p>Wind:<span id="fWind3"></span></p>
+                    <p>Humidity:<span id="fHumidity3"></span></p>
+                </div>
+                <div class="bg-sky-200 rounded-md shadow-md p-2">
+                    <p id="fDate4"></p>
+                    <p id="fImg4"></p>
+                    <p>Temp:<span id="fTemp4"></span></p>
+                    <p>Wind:<span id="fWind4"></span></p>
+                    <p>Humidity:<span id="fHumidity4"></span></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
     </div>
 </main>
