@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/style.css"/>
@@ -19,22 +24,22 @@
     <div class="row flex justify-center space-x-10 my-4">
     <div class="left-card bg-gray-200 w-1/4 shadow-md">
         <h2 class="font-bold text-3xl text-center">Check out the weather!</h2>
-        <form class="flex-col justify-center">
-            <input type="search" placeholder="Enter the city you would like to search" class="w-11/12 m-3 py-1">
+        <form class="flex-col justify-center" id="city-form">
+            <input type="text" placeholder="Enter the city you would like to search" id="searchCity" class="w-11/12 m-3 py-1">
             <button id="search-button" class="w-11/12 bg-sky-400 m-3 py-1">Search</button>
         </form>
         <button id="clear-history" class="bg-sky-400 m-3 px-3 py-1">Clear History</button>
-        <ul id="append-list">
+        <ul id="search-history">
 
         </ul>
     
     </div>
     <div class="right-card w-3/5">
         <div class="border border-solid rounded-md shadow-md p-2">
-            <h2 id="city" class="font-bold text-3xl"></h2>
-            <p>Temperature:</p>
-            <p>Humidity:</p>
-            <p>Wind Speed:</p>
+            <h2 id="current-city" class="font-bold text-3xl"></h2>
+            <p id="" class="">Temperature:<span id="current-temp"></span></p>
+            <p id="">Wind Speed:<span id="current-wind"></span> </p>
+            <p id="">Humidity:<span id="current-humidity"></span></p>
             </div>
         <div id="5-day-forecast">
             <h2 class="font-bold text-3xl m-4">5-Day-Forecast</h2>
@@ -81,6 +86,7 @@
 
     </div>
 </main>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="assets/script.js"></script>
 </body>
 </html>
