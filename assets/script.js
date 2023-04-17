@@ -113,13 +113,13 @@ function invokePastSearch(event){
 
 function loadlastCity(){
     $("ul").empty();
-    var sCity = JSON.parse(localStorage.getItem("cityname"));
-    if(sCity!==null){
+    var savedCity = JSON.parse(localStorage.getItem("cityname"));
+    if(savedCity!==null){
         sCity=JSON.parse(localStorage.getItem("cityname"));
-        for(i=0; i<sCity.length;i++){
-            addToList(sCity[i]);
+        for(i=0; i<savedCity.length;i++){
+            addToList(savedCity[i]);
         }
-        city=sCity[i-1]
+        city=savedCity[i-1]
         getWeather(city)
         getForecast(city)
     }
@@ -128,7 +128,7 @@ function loadlastCity(){
 // should clear history once it is populated
 function clearHistory(event){
     event.preventDefault();
-    sCity=[];
+    savedCity=[];
     localStorage.removeItem("cityname");
     document.location.reload();
 
