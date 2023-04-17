@@ -28,7 +28,7 @@ var citySearchHandler = function (event) {
 }
 
 
-
+// current weather
 var getWeather = function (city) {
     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + APIKey
 
@@ -59,7 +59,7 @@ var getWeather = function (city) {
         }
     })
 }
-
+// 5 day forecast
 var getForecast = function (city) {
     var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + APIKey
 
@@ -91,7 +91,9 @@ var getForecast = function (city) {
         }
     })
 }
+//none of this is working :(
 
+// should amend a list item to the search history ul element with the searched city as the text
 function addToList(city){
     var listEl= $("<li>"+city.toUpperCase()+"</li>");
     $(listEl).attr("class","list-group-item");
@@ -99,6 +101,7 @@ function addToList(city){
     historyContainer.append(listEl);
 }
 
+// if clicked on past searches, should run a weather and forecast search for the city
 function invokePastSearch(event){
     var liEl=event.target;
     if (event.target.matches("li")){
@@ -122,6 +125,7 @@ function loadlastCity(){
     }
 }
 
+// should clear history once it is populated
 function clearHistory(event){
     event.preventDefault();
     sCity=[];
